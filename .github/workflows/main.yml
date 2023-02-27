@@ -20,5 +20,5 @@ jobs:
         - uses: yesolutions/mirror-action@master
           with:
             REMOTE: 'https://github.com/brahimboufous/GitTraining.git'
-            GIT_USERNAME: 'boufousbrahim'
+            GIT_USERNAME: 'brahimboufous214@gmail.com'
             GIT_PASSWORD: 'G746120boufous' 
