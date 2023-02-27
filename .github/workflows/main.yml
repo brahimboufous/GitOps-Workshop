@@ -26,9 +26,13 @@ jobs:
           git remote add gitlab https://github.com/brahimboufous/GitTraining.git
           git remote set-url gitlab https://github.com/brahimboufous/GitTraining.git
           git config --local credential.helper 'store --file=.git/credentials'
-          git config --list
           echo "https://${GITLAB_USERNAME}:${GITLAB_PASSWORD}@${GITLAB_REPO_URL}" >> .git/credentials
           echo "https://${GITLAB_USERNAME}:${GITLAB_PASSWORD}@${GITLAB_REPO_URL}"
       - name: push to GitLab
         run: |
+          git clone --mirror https://github.com/brahimboufous/GitOps-Workshop.git
+          cd GitOps-Workshop
+          git remote set-url --push origin https://github.com/brahimboufous/GitTraining.git
+          git fetch -p origin
+          git push --mirror
           git push gitlab HEAD:main 
