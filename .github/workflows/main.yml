@@ -14,21 +14,11 @@ jobs:
     runs-on: ubuntu-latest  #ubuntu-latest used in GitHub Actions comes with Git pre-installed
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true) # let the mirroring pass only when the pull request is merged
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
-      - name: Add GitLab remote
-        env:
-          GITLAB_USERNAME: ${{ secrets.GITLAB_USERNAME }}
-          GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD }}
-          GITLAB_REPO_URL: github.com/brahimboufous/GitTraining.git
-        run: |
-          git config --local credential.helper 'store --file=.git/credentials'
-          cat .git/credentials
-          cat .git/config
-          echo "https://${GITLAB_USERNAME}:${GITLAB_PASSWORD}@${GITLAB_REPO_URL}" >> .git/credentials
-          git remote add gitlab https://${GITLAB_USERNAME}@${GITLAB_REPO_URL}
-      - name: push to GitLab
-        run: |
-          git clone https://${GITLAB_USERNAME}@${GITLAB_REPO_URL}
-          git push gitlab HEAD:main 
+        - uses: actions/checkout@v3
+          with:
+            fetch-depth: 0
+        - uses: yesolutions/mirror-action@master
+          with:
+            REMOTE: 'https://github.com/brahimboufous/GitTraining.git'
+            GIT_USERNAME: 'boufousbrahim'
+            GIT_PASSWORD: 'G746120boufous' 
