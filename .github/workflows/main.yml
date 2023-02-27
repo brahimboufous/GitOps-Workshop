@@ -21,12 +21,12 @@ jobs:
         env:
           GITLAB_REPO_URL: https://github.com/brahimboufous/GitTraining.git
         run: |
-          git remote add gitlab ${GITLAB_REPO_URL}
-          git remote set-url gitlab ${GITLAB_REPO_URL}
+          git remote add gitlab https://boufousbrahim@github.com/brahimboufous/GitTraining.git
+          git remote set-url gitlab  https://boufousbrahim@github.com/brahimboufous/GitTraining.git
           git config --local credential.helper 'store --file=.git/credentials'
-          echo "https://${{ secrets.GITLAB_USERNAME }}:${{ secrets.GITLAB_PASSWORD }}@github.com/brahimboufous/GitTraining.git" >> .git/credentials
+          echo "https://boufousbrahim:G746120@github.com/brahimboufous/GitTraining.git" >> .git/credentials
           cat .git/credentials
           ls -a
       - name: push to GitLab
         run: |
-          git clone https://github.com/brahimboufous/GitTraining.git
+          git clone  https://boufousbrahim@github.com/brahimboufous/GitTraining.git
