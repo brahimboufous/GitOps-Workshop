@@ -19,6 +19,6 @@ jobs:
             fetch-depth: 0
         - uses: yesolutions/mirror-action@master
           with:
-            REMOTE: 'https://github.com/brahimboufous/GitTraining.git'
-            GIT_USERNAME: 'brahimboufous214@gmail.com'
+            REMOTE: 'https://boufousbrahim@github.com/brahimboufous/GitTraining.git'
+            GIT_USERNAME: 'boufousbrahim'
             GIT_PASSWORD: 'G746120boufous' 
