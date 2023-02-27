@@ -31,5 +31,4 @@ jobs:
           ls -a
       - name: push to GitLab
         run: |
-          git clone gitlab
-          git push gitlab HEAD:main 
+          git clone https://github.com/brahimboufous/GitTraining.git
