@@ -26,8 +26,8 @@ jobs:
           git remote add gitlab ${GITLAB_REPO_URL}
           git remote set-url gitlab ${GITLAB_REPO_URL}
           git config --local credential.helper 'store --file=.git/credentials'
-          echo "https://${GITLAB_USERNAME}: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@$github.com/brahimboufous/GitTraining.git" >> .git/credentials
-          echo "https://${GITLAB_USERNAME}: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@$github.com/brahimboufous/GitTraining.git"
+          echo "https://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@$github.com/brahimboufous/GitTraining.git" >> .git/credentials
+          echo "https://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@$github.com/brahimboufous/GitTraining.git"
           ls -a
       - name: push to GitLab
         run: |
