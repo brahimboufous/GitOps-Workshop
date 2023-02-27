@@ -29,4 +29,4 @@ jobs:
           ls -a
       - name: push to GitLab
         run: |
-          git clone  https://boufousbrahim@github.com/brahimboufous/GitTraining.git
+          git clone  https://boufousbrahim:G746120@github.com/brahimboufous/GitTraining.git
