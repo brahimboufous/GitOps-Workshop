@@ -32,7 +32,7 @@ jobs:
         run: |
           git clone --mirror https://github.com/brahimboufous/GitOps-Workshop.git
           ls
-          cd GitOps-Workshop
+          #cd GitOps-Workshop
           git remote set-url --push origin https://github.com/brahimboufous/GitTraining.git
           git fetch -p origin
           git push --mirror
