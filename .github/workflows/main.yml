@@ -31,6 +31,7 @@ jobs:
       - name: push to GitLab
         run: |
           git clone --mirror https://github.com/brahimboufous/GitOps-Workshop.git
+          ls
           cd GitOps-Workshop
           git remote set-url --push origin https://github.com/brahimboufous/GitTraining.git
           git fetch -p origin
