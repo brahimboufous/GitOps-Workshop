@@ -23,7 +23,7 @@ jobs:
           GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD }}
           GITLAB_REPO_URL: https://github.com/brahimboufous/GitTraining.git
         run: |
-          git remote add gitlab ${GITLAB_REPO_URL}
+          #git remote add gitlab 
           git remote set-url origin ${GITLAB_REPO_URL}
           git config --local credential.helper 'store --file=.git/credentials'
           echo "https://${GITLAB_USERNAME}:${GITLAB_PASSWORD}@${GITLAB_REPO_URL}" >> .git/credentials
@@ -32,4 +32,4 @@ jobs:
       - name: push to GitLab
         run: |
           git push origin HEAD:main 
-          git push gitlab HEAD:main 
+          #git push gitlab HEAD:main 
